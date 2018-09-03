@@ -5,6 +5,25 @@
     padding: 0%;
 }
 
+
+span#birth {
+    /* font-size: medium; */
+    color: #968f8f;
+}
+
+span#name {
+    /* font-size: x-large; */
+}
+
+ul#links{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+ul#links li {
+    list-style-type: none;
+}
+
 ul#links li a {
     color: black;
     font-size: 1.3rem;
@@ -14,23 +33,6 @@ ul#links li a {
 ul#links li a:hover {
     color: white;
     background: black;
-}
-
-span#describe {}
-
-span#birth {
-    font-size: medium;
-    color: #968f8f;
-}
-
-span#name {
-    font-size: x-large;
-}
-
-ul#links li {
-    list-style-type: none;
-    display: inline-block;
-    padding: 1% 2%;
 }
 
 span#name, span#birth, span#describe, ul#links {
@@ -46,7 +48,8 @@ img {
 }
 
 .card {
-    width: 20%;
+    max-width: 270px;
+    min-width: 270px;
     height: 60%;
     background: #ebebeb;
     border-radius: 2%;
@@ -65,4 +68,20 @@ html, body, .container{
     background-image: linear-gradient(var(--deg, 225deg), #f3f0d8, black);
     display: flex;
     justify-content: center;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+    .card{
+        max-width: 60%;
+        height: 70%;
+    }
+
+body {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+ul#links li a {
+    font-size: 1.5em;
+}
 }
