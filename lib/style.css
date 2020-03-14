@@ -113,13 +113,10 @@ img {
     height: 210px;
     padding: 10px;
     display: inline-flex;
-    margin-left: 100px;
     background: #f2f3f1;
     border-radius: 10px;
-    box-shadow: 0 0 9px 0px #bfbebe;
     position: relative !important;
     transform-style: preserve-3d !important;
-    /* transform: rotateY(328deg); */
 }
 
 html,
@@ -137,59 +134,191 @@ section {
     background: radial-gradient(#333, #000);
 }
 
-.set {
+#infomation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#infomation.show {
+    display: block;
+}
+
+#box-cover {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
+    z-index: 1;
 }
 
-.set div.card {
+.box {
+    width: 60%;
+    height: 85%;
+    background: linear-gradient(to bottom left, #dddee2, #cbccd1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 2;
+}
+
+.top-box,
+.bot-box {
+    width: 430px;
+    height: 250px;
+    box-shadow: -20px 20px 20px -5px #0000006b;
+}
+
+.top-box {
+    background: linear-gradient(to bottom left, #ebc539, #cc9e1b);
+    position: relative;
+}
+
+.top-box .top-box-title {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-family: cursive;
+    font-size: 2.5em;
+}
+
+.top-box:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #ffffffa1;
+    width: 35%;
+    height: 1.5px;
+    transform: rotateZ(-30deg);
+    transform-origin: left;
+}
+
+.top-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #ffffffa1;
+    width: 45%;
+    height: 1.5px;
+    transform: rotateZ(-30deg);
+    transform-origin: right;
+}
+
+.bot-box {
+    background: linear-gradient(to bottom left, #efefef, #cecece);
+}
+
+.box-title {
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2em;
+    padding: 22px 0 20px 0;
+    position: relative;
+}
+
+h1.box-title:after {
+    content: "";
+    position: absolute;
+    width: 25%;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e0b72e;
+}
+
+.box-describe {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.box-describe h4 {
+    margin: 5px;
+}
+
+.box-describe p {
+    margin: 5px;
+}
+
+.box .links {
+    margin: 20px;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+#set {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* z-index: 1; */
+}
+
+.set-backforce {
+    filter: blur(2px);
+}
+
+#set div.card {
     position: absolute;
 }
 
-.set div.card:nth-child(1) {
-    left: 10%;
+#set div.card:nth-child(1) {
+    left: 2%;
     animation: animate 4s linear infinite;
     animation-delay: -7s;
 }
 
-.set div.card:nth-child(2) {
-    left: 20%;
+#set div.card:nth-child(2) {
+    left: 8%;
     animation: animate 9s linear infinite;
     animation-delay: -10s;
 }
 
-.set div.card:nth-child(3) {
-    left: 25%;
+#set div.card:nth-child(3) {
+    left: 85%;
     animation: animate 5s linear infinite;
 }
 
-.set div.card:nth-child(4) {
+#set div.card:nth-child(4) {
     left: 30%;
     animation: animate 8s linear infinite;
     animation-delay: -9s;
 }
 
-.set div.card:nth-child(5) {
-    left: 85%;
+#set div.card:nth-child(5) {
+    left: 39%;
     animation: animate 8s linear infinite;
     animation-delay: -10s;
 }
 
-.set div.card:nth-child(6) {
+#set div.card:nth-child(6) {
     left: 0%;
     animation: animate 7s linear infinite;
     animation-delay: -10s;
 }
 
-.set div.card:nth-child(7) {
+#set div.card:nth-child(7) {
     left: 50%;
     animation: animate 8s linear infinite;
 }
 
-.set div.card:nth-child(8) {
+#set div.card:nth-child(8) {
     left: 60%;
     animation: animate 6s linear infinite;
 }
@@ -226,6 +355,36 @@ section {
     }
 }
 
+@keyframes flash-animate {
+    0% {
+        opacity: 0.1;
+    }
+    12.5% {
+        opacity: 0.3;
+    }
+    25% {
+        opacity: 0.6;
+    }
+    37.5% {
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 1;
+    }
+    62.5% {
+        opacity: 0.9;
+    }
+    75% {
+        opacity: 0.6;
+    }
+    87.5% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0.1;
+    }
+}
+
 h2 {
     position: absolute;
     top: 50%;
@@ -238,4 +397,13 @@ h2 {
     font-size: 5em;
     font-family: monospace;
     text-transform: uppercase;
+    /* z-index: 2; */
+}
+
+h2 .hint {
+    text-transform: none;
+    font-size: medium;
+    font-weight: 100;
+    margin-top: 25px;
+    animation: flash-animate 1s linear infinite;
 }
