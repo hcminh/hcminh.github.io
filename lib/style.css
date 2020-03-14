@@ -397,7 +397,6 @@ h2 {
     font-size: 5em;
     font-family: monospace;
     text-transform: uppercase;
-    /* z-index: 2; */
 }
 
 h2 .hint {
@@ -406,4 +405,11 @@ h2 .hint {
     font-weight: 100;
     margin-top: 25px;
     animation: flash-animate 1s linear infinite;
+}
+
+@media only screen and (orientation: portrait) {
+    #set,
+    #intro {
+        display: none;
+    }
 }
